@@ -1,0 +1,12 @@
+Week,Performance1,Performance2,Performance3,Performance4,Performance5,Method
+0,40,42,45,44,50,Stop and Go
+1,50,58,60,NA,NA,Stop and Go
+2,67,70,70,72,NA,Pencil Tap
+3,70,70,75,78,80,Duet
+4,90,95,94,93,93,Repeated
+5,93,94,NA,NA,NA,Duet
+6,91,95,100,102,105,Pencil Tap
+7,NA,NA,NA,NA,NA,NA
+8,NA,NA,NA,NA,NA,NA
+9,91,95,100,102,105,Pencil Tap
+10,91,95,100,102,105,Pencil Tap
