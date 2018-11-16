@@ -2,13 +2,12 @@
 library(shiny)
 
 shinyUI(fluidPage(
-  
-  # Application title
+  # Title
   titlePanel(h3("Student performance monitoring")),
   
-  # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
+      tags$style(".well {background-color:#bfdcf2;}"),
       radioButtons(inputId = "data_type",
                    label = "Upload files or use toy data?",
                    choices = c("Upload file","Toy data"),
@@ -27,20 +26,20 @@ shinyUI(fluidPage(
                                  placeholder = "No file selected")),
       checkboxInput("show_percentiles",
                     "Show percentiles"),
-      sliderInput("input_percentile_goal",
-                   "Select percentile for final goal",
-                   min = 1,
-                   max = 99,
-                   value = 20),
+      numericInput("input_goal",
+                   "Set performance goal",
+                   value = NA),
       checkboxInput("show_smooth_line",
                     "Show performance progress smooth line"),
-      textInput("performance_metric",
-                "Fill in the performance's measurement unit"),
       textInput("plot_title",
                 "Fill in plot's title"),
+      textInput("performance_metric",
+                "Fill in the y-axis label (Performance's measurement unit)"),
+      textInput("period_unit",
+                "Fill in the x-axis label (Period's unit)"),
       downloadButton("export_plot",
-                     "Export plot")
-    ),
+                     "Export plot"),
+    width = 3),
     # Show a plot of the generated distribution
     mainPanel(
        plotOutput("plot1",
